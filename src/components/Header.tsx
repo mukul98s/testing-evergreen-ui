@@ -1,19 +1,10 @@
-import {
-  Pane,
-  AirplaneIcon,
-  majorScale,
-  Link,
-  minorScale,
-  HomeIcon,
-  GlobeNetworkIcon,
-  BookIcon,
-  CameraIcon,
-  CalendarIcon,
-  MobilePhoneIcon,
-} from "evergreen-ui";
+import { Pane, AirplaneIcon, majorScale, Link, minorScale } from "evergreen-ui";
 import React from "react";
+import { Link as RouterLink, useLocation } from "react-router-dom";
+import navRoutes from "../constants/navRoutes";
 
 const Header: React.FC = () => {
+  const { pathname } = useLocation();
   return (
     <Pane
       display="flex"
@@ -35,42 +26,20 @@ const Header: React.FC = () => {
         justifyContent="space-evenly"
         gap={majorScale(2)}
       >
-        <Link href="#" marginY={8} marginRight={12}>
-          <Pane display="flex" gap={minorScale(1)} alignItems="center">
-            <HomeIcon />
-            Home
-          </Pane>
-        </Link>
-        <Link href="#" marginY={8} marginRight={12} color="neutral">
-          <Pane display="flex" gap={minorScale(1)} alignItems="center">
-            <GlobeNetworkIcon />
-            Network{" "}
-          </Pane>
-        </Link>
-        <Link href="#" marginY={8} marginRight={12} color="neutral">
-          <Pane display="flex" gap={minorScale(1)} alignItems="center">
-            <BookIcon />
-            Blog
-          </Pane>
-        </Link>
-        <Link href="#" marginY={8} marginRight={12} color="neutral">
-          <Pane display="flex" gap={minorScale(1)} alignItems="center">
-            <CameraIcon />
-            Work
-          </Pane>
-        </Link>
-        <Link href="#" marginY={8} marginRight={12} color="neutral">
-          <Pane display="flex" gap={minorScale(1)} alignItems="center">
-            <CalendarIcon />
-            Metting
-          </Pane>
-        </Link>
-        <Link href="#" marginY={8} marginRight={12} color="neutral">
-          <Pane display="flex" gap={minorScale(1)} alignItems="center">
-            <MobilePhoneIcon />
-            Call Us
-          </Pane>
-        </Link>
+        {navRoutes.map((route, index) => {
+          return (
+            <Link key={index} marginY={8} marginRight={12}>
+              <RouterLink to={route.path} className="no-underline">
+                <Link color={pathname === route.path ? "" : "neutral"}>
+                  <Pane display="flex" gap={minorScale(1)} alignItems="center">
+                    <route.icon />
+                    {route.title}
+                  </Pane>
+                </Link>
+              </RouterLink>
+            </Link>
+          );
+        })}
       </Pane>
     </Pane>
   );
