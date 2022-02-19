@@ -8,6 +8,7 @@ import "@mobiscroll/react/dist/css/mobiscroll.min.css";
 import { majorScale, Pane } from "evergreen-ui";
 
 const Schedule: React.FC = () => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [events, setEvents] = useState<MbscCalendarEvent[]>([
     {
       start: "2022-02-01",
