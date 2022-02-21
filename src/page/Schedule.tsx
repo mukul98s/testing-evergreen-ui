@@ -50,7 +50,15 @@ const Schedule: React.FC = () => {
 
   return (
     <Pane border marginY={majorScale(2)}>
-      <Eventcalendar data={events} actionableEvents clickToCreate view={view} />
+      <Eventcalendar
+        data={events}
+        actionableEvents
+        clickToCreate
+        view={view}
+        theme="ios"
+        dragToMove
+        dragToCreate
+      />
     </Pane>
   );
 };
