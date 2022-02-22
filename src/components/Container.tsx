@@ -7,7 +7,7 @@ interface Props {
 
 const Container: React.FC<Props> = ({ children }) => {
   return (
-    <Pane margin="auto" maxWidth="1080px">
+    <Pane margin="auto" maxWidth="968px">
       {children}
     </Pane>
   );
