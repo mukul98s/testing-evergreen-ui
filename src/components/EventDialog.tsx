@@ -1,5 +1,5 @@
 import React from "react";
-import { Pane, Dialog, TextInput, Heading } from "evergreen-ui";
+import { Pane, Dialog, Heading } from "evergreen-ui";
 import "@mobiscroll/react/dist/css/mobiscroll.min.css";
 
 interface Props {
