@@ -22,7 +22,7 @@ import React, { useState, useEffect, useMemo, useCallback } from "react";
 
 setOptions({
   theme: "ios",
-  themeVariant: "light",
+  themeVariant: "dark",
 });
 
 const defaultEvents = [
