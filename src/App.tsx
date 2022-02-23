@@ -3,6 +3,8 @@ import Home from "./page/Home";
 import Header from "./components/Header";
 import Schedule from "./page/Schedule";
 import Container from "./components/Container";
+import { SharedCalender } from "./page/SharedCalender";
+import { CrudCalender } from "./page/CrudCalender";
 
 function App() {
   return (
@@ -11,6 +13,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/meeting" element={<Schedule />} />
+        <Route path="/network" element={<SharedCalender />} />
+        <Route path="/work" element={<CrudCalender />} />
       </Routes>
     </Container>
   );
