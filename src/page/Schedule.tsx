@@ -237,7 +237,7 @@ const Schedule: React.FC = () => {
   return (
     <>
       <EventDialog isShown={isShown} setIsShown={setIsShown} />
-      <Pane border marginY={majorScale(2)}>
+      <Pane border marginY={majorScale(2)} height="600px">
         <Eventcalendar
           renderHeader={customWithNavButtons}
           data={events}
