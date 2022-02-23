@@ -1,5 +1,6 @@
 import React from "react";
-import { Pane, Dialog, TextInput } from "evergreen-ui";
+import { Pane, Dialog, TextInput, Heading } from "evergreen-ui";
+import "@mobiscroll/react/dist/css/mobiscroll.min.css";
 
 interface Props {
   isShown: boolean;
@@ -16,7 +17,7 @@ export const EventDialog: React.FC<Props> = ({ isShown, setIsShown }) => {
         confirmLabel="Custom Label"
         hasFooter={false}
       >
-        <TextInput name="Event Title" placeholder="Event Title" />
+        <Heading>Created a dummy event</Heading>
       </Dialog>
     </Pane>
   );
